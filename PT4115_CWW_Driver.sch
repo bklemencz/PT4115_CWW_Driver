@@ -1,0 +1,481 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:BK_LED_Drivers
+LIBS:BK_Common
+LIBS:PT4115_CWW_Driver-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "PT4115 Two Channel LED Driver "
+Date "2017-09-04"
+Rev "V1.0"
+Comp "BK"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 8800 6750 0    60   ~ 12
+Rs = 0.1/IledAVG
+Text Notes 8800 6850 0    60   ~ 12
+SoftStart Cdim 0.8ms/nF
+Text Notes 8800 6950 0    60   ~ 12
+DIM Pin internal pullup to 5V with 200K
+Text Notes 8800 7050 0    60   ~ 12
+Half Power without control Vdim:1.2V Rdim:62K
+$Comp
+L PT4115 U2
+U 1 1 59ACF09B
+P 6050 3750
+F 0 "U2" H 5800 3400 60  0000 C CNN
+F 1 "PT4115" H 6250 3400 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT89-5_Housing" H 6150 3150 60  0001 C CNN
+F 3 "https://people.xiph.org/~xiphmont/thinkpad/PT4115E.pdf" H 6100 3000 60  0001 C CNN
+	1    6050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 59ACF116
+P 6050 4450
+F 0 "#PWR01" H 6050 4200 50  0001 C CNN
+F 1 "GND" H 6050 4300 50  0000 C CNN
+F 2 "" H 6050 4450 50  0000 C CNN
+F 3 "" H 6050 4450 50  0000 C CNN
+	1    6050 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4250 6050 4450
+$Comp
+L R_SMD_0805 R2
+U 1 1 59ACF12F
+P 6050 2900
+F 0 "R2" H 6080 2920 50  0000 L CNN
+F 1 "0R3" H 6080 2860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 6100 2750 50  0001 C CNN
+F 3 "" H 6050 2900 50  0000 C CNN
+	1    6050 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4800 2900 5950 2900
+Wire Wire Line
+	5900 2900 5900 3250
+Wire Wire Line
+	6200 2900 6200 3250
+$Comp
+L SS14 D2
+U 1 1 59ACF1A3
+P 6650 3550
+F 0 "D2" H 6600 3630 50  0000 L CNN
+F 1 "SS14" H 6550 3450 50  0000 L CNN
+F 2 "Diodes_SMD:D_SMA" H 6700 3350 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88746/ss12.pdf" H 6700 3250 50  0001 C CNN
+	1    6650 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 3750 6850 3750
+Wire Wire Line
+	6650 3750 6650 3650
+Wire Wire Line
+	6650 3450 6650 3150
+Wire Wire Line
+	6650 3150 5900 3150
+Connection ~ 5900 3150
+$Comp
+L IND_SMD_UNSH_CD_54 L2
+U 1 1 59ACF373
+P 6850 3500
+F 0 "L2" H 6850 3600 50  0000 C CNN
+F 1 "68uH" H 6850 3450 50  0000 C CNN
+F 2 "BK_Common:IND_SMD_CD54" H 6850 3350 50  0001 C CNN
+F 3 "" H 6850 3500 50  0000 C CNN
+	1    6850 3500
+	0    1    1    0   
+$EndComp
+Connection ~ 6650 3750
+Connection ~ 6200 2900
+Text Label 7150 2900 0    60   ~ 12
+Out2P
+Text Label 7150 3100 0    60   ~ 12
+Out2N
+$Comp
+L C_Cer_SMD_0805 C2
+U 1 1 59ACF4C9
+P 6950 3000
+F 0 "C2" H 6800 3050 50  0000 L CNN
+F 1 "1uF/25V" H 6550 2950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6950 2850 50  0001 C CNN
+F 3 "" H 6950 3000 50  0000 C CNN
+	1    6950 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3250 6850 3100
+Wire Wire Line
+	6850 3100 7400 3100
+Connection ~ 6950 3100
+$Comp
+L R_SMD_0805 R4
+U 1 1 59ACF6F7
+P 5450 4050
+F 0 "R4" H 5480 4070 50  0000 L CNN
+F 1 "62k" H 5480 4010 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 5500 3900 50  0001 C CNN
+F 3 "" H 5450 4050 50  0000 C CNN
+	1    5450 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L C_Cer_SMD_0805 C6
+U 1 1 59ACF9D9
+P 5200 4050
+F 0 "C6" H 5050 4100 50  0000 L CNN
+F 1 "10n" H 5000 4000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5200 3900 50  0001 C CNN
+F 3 "" H 5200 4050 50  0000 C CNN
+	1    5200 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4350 6050 4350
+Connection ~ 6050 4350
+Connection ~ 5450 4350
+Wire Wire Line
+	4800 3750 5550 3750
+Wire Wire Line
+	5450 3750 5450 3950
+Wire Wire Line
+	5200 3750 5200 3950
+Connection ~ 5450 3750
+Connection ~ 5200 3750
+Text Label 4800 3750 0    60   ~ 12
+DIM2
+Wire Wire Line
+	5450 4150 5450 4350
+Wire Wire Line
+	5200 4150 5200 4350
+Connection ~ 5900 2900
+$Comp
+L C_Cer_SMD_1206 C4
+U 1 1 59ACFF15
+P 5300 3050
+F 0 "C4" H 5310 3120 50  0000 L CNN
+F 1 "10Uf/50V" H 5310 2970 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206" H 5300 2900 50  0001 C CNN
+F 3 "" H 5300 3050 50  0000 C CNN
+	1    5300 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5300 2950 5300 2900
+Connection ~ 5300 2900
+$Comp
+L GND #PWR02
+U 1 1 59AD0010
+P 5300 3200
+F 0 "#PWR02" H 5300 2950 50  0001 C CNN
+F 1 "GND" H 5300 3050 50  0000 C CNN
+F 2 "" H 5300 3200 50  0000 C CNN
+F 3 "" H 5300 3200 50  0000 C CNN
+	1    5300 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 3150 5300 3200
+Text Label 4800 2900 0    60   ~ 12
+VIN
+$Comp
+L PT4115 U1
+U 1 1 59AD0832
+P 3050 3750
+F 0 "U1" H 2800 3400 60  0000 C CNN
+F 1 "PT4115" H 3250 3400 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT89-5_Housing" H 3150 3150 60  0001 C CNN
+F 3 "https://people.xiph.org/~xiphmont/thinkpad/PT4115E.pdf" H 3100 3000 60  0001 C CNN
+	1    3050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 59AD0838
+P 3050 4450
+F 0 "#PWR03" H 3050 4200 50  0001 C CNN
+F 1 "GND" H 3050 4300 50  0000 C CNN
+F 2 "" H 3050 4450 50  0000 C CNN
+F 3 "" H 3050 4450 50  0000 C CNN
+	1    3050 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 4250 3050 4450
+$Comp
+L R_SMD_0805 R1
+U 1 1 59AD083F
+P 3050 2900
+F 0 "R1" H 3080 2920 50  0000 L CNN
+F 1 "0R3" H 3080 2860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 3100 2750 50  0001 C CNN
+F 3 "" H 3050 2900 50  0000 C CNN
+	1    3050 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1800 2900 2950 2900
+Wire Wire Line
+	2900 2900 2900 3250
+Wire Wire Line
+	3200 2900 3200 3250
+$Comp
+L SS14 D1
+U 1 1 59AD0849
+P 3650 3550
+F 0 "D1" H 3600 3630 50  0000 L CNN
+F 1 "SS14" H 3550 3450 50  0000 L CNN
+F 2 "Diodes_SMD:D_SMA" H 3700 3350 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88746/ss12.pdf" H 3700 3250 50  0001 C CNN
+	1    3650 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3550 3750 3850 3750
+Wire Wire Line
+	3650 3750 3650 3650
+Wire Wire Line
+	3650 3450 3650 3150
+Wire Wire Line
+	3650 3150 2900 3150
+Connection ~ 2900 3150
+$Comp
+L IND_SMD_UNSH_CD_54 L1
+U 1 1 59AD0854
+P 3850 3500
+F 0 "L1" H 3850 3600 50  0000 C CNN
+F 1 "68uH" H 3850 3450 50  0000 C CNN
+F 2 "BK_Common:IND_SMD_CD54" H 3850 3350 50  0001 C CNN
+F 3 "" H 3850 3500 50  0000 C CNN
+	1    3850 3500
+	0    1    1    0   
+$EndComp
+Connection ~ 3650 3750
+Connection ~ 3200 2900
+Text Label 4150 2900 0    60   ~ 12
+Out1P
+Text Label 4150 3100 0    60   ~ 12
+Out1N
+$Comp
+L C_Cer_SMD_0805 C1
+U 1 1 59AD085E
+P 3950 3000
+F 0 "C1" H 3800 3050 50  0000 L CNN
+F 1 "1uF/25V" H 3550 2950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3950 2850 50  0001 C CNN
+F 3 "" H 3950 3000 50  0000 C CNN
+	1    3950 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 3250 3850 3100
+Wire Wire Line
+	3850 3100 4400 3100
+Connection ~ 3950 3100
+$Comp
+L R_SMD_0805 R3
+U 1 1 59AD0867
+P 2450 4050
+F 0 "R3" H 2480 4070 50  0000 L CNN
+F 1 "62k" H 2480 4010 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 2500 3900 50  0001 C CNN
+F 3 "" H 2450 4050 50  0000 C CNN
+	1    2450 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L C_Cer_SMD_0805 C5
+U 1 1 59AD086D
+P 2200 4050
+F 0 "C5" H 2050 4100 50  0000 L CNN
+F 1 "10n" H 2000 4000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2200 3900 50  0001 C CNN
+F 3 "" H 2200 4050 50  0000 C CNN
+	1    2200 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 4350 3050 4350
+Connection ~ 3050 4350
+Connection ~ 2450 4350
+Wire Wire Line
+	1800 3750 2550 3750
+Wire Wire Line
+	2450 3750 2450 3950
+Wire Wire Line
+	2200 3750 2200 3950
+Connection ~ 2450 3750
+Connection ~ 2200 3750
+Text Label 1800 3750 0    60   ~ 12
+DIM1
+Wire Wire Line
+	2450 4150 2450 4350
+Wire Wire Line
+	2200 4150 2200 4350
+Connection ~ 2900 2900
+$Comp
+L C_Cer_SMD_1206 C3
+U 1 1 59AD087F
+P 2300 3050
+F 0 "C3" H 2310 3120 50  0000 L CNN
+F 1 "10Uf/50V" H 2310 2970 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206" H 2300 2900 50  0001 C CNN
+F 3 "" H 2300 3050 50  0000 C CNN
+	1    2300 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2300 2950 2300 2900
+Connection ~ 2300 2900
+$Comp
+L GND #PWR04
+U 1 1 59AD0887
+P 2300 3200
+F 0 "#PWR04" H 2300 2950 50  0001 C CNN
+F 1 "GND" H 2300 3050 50  0000 C CNN
+F 2 "" H 2300 3200 50  0000 C CNN
+F 3 "" H 2300 3200 50  0000 C CNN
+	1    2300 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3150 2300 3200
+Text Label 1800 2900 0    60   ~ 12
+VIN
+$Comp
+L CONN_01X04 P1
+U 1 1 59AD0BB4
+P 8700 3050
+F 0 "P1" H 8700 3300 50  0000 C CNN
+F 1 "LED" V 8800 3050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 8700 3050 50  0001 C CNN
+F 3 "" H 8700 3050 50  0000 C CNN
+	1    8700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P2
+U 1 1 59AD0D24
+P 8700 3650
+F 0 "P2" H 8700 3850 50  0000 C CNN
+F 1 "DIM" V 8800 3650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 8700 3650 50  0001 C CNN
+F 3 "" H 8700 3650 50  0000 C CNN
+	1    8700 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P3
+U 1 1 59AD0DF5
+P 8700 4150
+F 0 "P3" H 8700 4300 50  0000 C CNN
+F 1 "PWR" V 8800 4150 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8700 4150 50  0001 C CNN
+F 3 "" H 8700 4150 50  0000 C CNN
+	1    8700 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 2900 8100 2900
+Wire Wire Line
+	8500 3000 8100 3000
+Wire Wire Line
+	8500 3100 8100 3100
+Wire Wire Line
+	8500 3200 8100 3200
+Wire Wire Line
+	8500 3550 8100 3550
+Wire Wire Line
+	8500 3650 8100 3650
+Wire Wire Line
+	8000 3750 8500 3750
+Text Label 8100 3000 0    60   ~ 12
+Out1P
+Text Label 8100 2900 0    60   ~ 12
+Out1N
+Text Label 8100 3100 0    60   ~ 12
+Out2P
+Text Label 8100 3200 0    60   ~ 12
+Out2N
+Text Label 8100 3550 0    60   ~ 12
+DIM1
+Text Label 8100 3650 0    60   ~ 12
+DIM2
+$Comp
+L GND #PWR05
+U 1 1 59AD1CBB
+P 8000 3850
+F 0 "#PWR05" H 8000 3600 50  0001 C CNN
+F 1 "GND" H 8000 3700 50  0000 C CNN
+F 2 "" H 8000 3850 50  0000 C CNN
+F 3 "" H 8000 3850 50  0000 C CNN
+	1    8000 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 4100 8100 4100
+Wire Wire Line
+	8000 4200 8500 4200
+$Comp
+L GND #PWR06
+U 1 1 59AD2196
+P 8000 4300
+F 0 "#PWR06" H 8000 4050 50  0001 C CNN
+F 1 "GND" H 8000 4150 50  0000 C CNN
+F 2 "" H 8000 4300 50  0000 C CNN
+F 3 "" H 8000 4300 50  0000 C CNN
+	1    8000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4200 8000 4300
+Text Label 8100 4100 0    60   ~ 12
+VIN
+Wire Wire Line
+	3150 2900 4400 2900
+Connection ~ 3950 2900
+Wire Wire Line
+	6150 2900 7400 2900
+Connection ~ 6950 2900
+Wire Wire Line
+	8000 3850 8000 3750
+$EndSCHEMATC
