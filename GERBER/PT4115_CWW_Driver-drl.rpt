@@ -1,5 +1,5 @@
-Drill report for C:\Users\t9569bk\Documents\KiCad\PT4115_CWW_Driver\PT4115_CWW_Driver.kicad_pcb
-Created on 9/5/2017 3:06:36 PM
+Drill report for X:/PT4115_CWW_Driver/PT4115_CWW_Driver.kicad_pcb
+Created on 9/5/2017 9:47:51 PM
 
 Copper Layer Stackup:
     =============================================================
@@ -7,7 +7,7 @@ Copper Layer Stackup:
     L2 :  B.Cu                      back
 
 
-Drill file 'C:PT4115_CWW_Driver.drl' contains
+Drill file 'X:PT4115_CWW_Driver.drl' contains
     plated through holes:
     =============================================================
     T1  0.40mm  0.016"  (22 holes)
@@ -16,7 +16,7 @@ Drill file 'C:PT4115_CWW_Driver.drl' contains
     Total plated holes count 31
 
 
-Drill file 'C:PT4115_CWW_Driver-NPTH.drl' contains
+Not plated through holes are merged with plated holes
     unplated through holes:
     =============================================================
 
