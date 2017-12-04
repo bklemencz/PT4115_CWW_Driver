@@ -1,4 +1,4 @@
-update=9/4/2017 1:54:44 PM
+update=9/13/2017 8:47:06 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,13 @@ LibName28=contrib
 LibName29=valves
 LibName30=C:/Users/t9569bk/Documents/PCB_Libs/KICad-Library/BK_LED_Drivers
 LibName31=C:/Users/t9569bk/Documents/PCB_Libs/KICad-Library/BK_Common
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
